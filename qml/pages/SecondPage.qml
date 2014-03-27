@@ -54,15 +54,14 @@ Page {
                     if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
                         try {
                             data = JSON.parse(xmlHttp.responseText);
-                            console.log(data.responseData);
                             model1.clear();
                             for (var i = 0; i < data.responseData.length; i++) {
-                                console.log(data.responseData[i].title);
-
+                                var genre = data.responseData[i].genre.slice(0, - 1);
+                                console.log(data.responseData[i].genre.slice(0, - 1));
                                 model1.append({
                                                   'title': data.responseData[i].title,
                                                   'image': data.responseData[i].image,
-                                                  'genre': data.responseData[i].genre,
+                                                  'genre': genre,
                                                   'runtime': data.responseData[i].runtime
                                               })
                             }

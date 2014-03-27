@@ -18,5 +18,7 @@ OTHER_FILES += qml/Srboskop.qml \
     qml/pages/SecondPage.qml \
     rpm/Srboskop.spec \
     rpm/Srboskop.yaml \
-    Srboskop.desktop
+    Srboskop.desktop \
+    qml/pages/Cinema.qml \
+    qml/pages/Movie.qml
 
