@@ -14,11 +14,10 @@ SOURCES += src/Srboskop.cpp
 
 OTHER_FILES += qml/Srboskop.qml \
     qml/cover/CoverPage.qml \
-    qml/pages/FirstPage.qml \
-    qml/pages/SecondPage.qml \
     rpm/Srboskop.spec \
     rpm/Srboskop.yaml \
     Srboskop.desktop \
     qml/pages/Cinema.qml \
-    qml/pages/Movie.qml
+    qml/pages/Movie.qml \
+    qml/js/Logic.js
 

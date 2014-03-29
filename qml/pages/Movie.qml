@@ -25,6 +25,7 @@ Page {
 
         // Place our content in a Column.  The PageHeader is always placed at the top
         // of the page, followed by our content.
+
         Column {
             id: column
             width: page.width
@@ -32,25 +33,33 @@ Page {
             PageHeader {
                 title: page.title
             }
-            Image {
-                id: moviePoster
-                source: image
-                anchors.left: parent.left
-                anchors.right: parent.right
-                fillMode: Image.PreserveAspectFit
+            Item {
+                id: container1
+                Image {
+                    id: moviePoster
+                    source: image
+                    anchors.left: parent.left
+                    fillMode: Image.PreserveAspectFit
+                }
+                Label {
+                    id: movieGenreLabel
+                    x: Theme.paddingLarge
+                    text: page.genre
+                    color: Theme.secondaryColor
+                    font.pixelSize: Theme.fontSizeMedium
+                    anchors.left: moviePoster.right
+                }
+                Label {
+                    id: movieRuntimeLabel
+                    x: Theme.paddingLarge
+                    text: page.runtime
+                    color: Theme.secondaryColor
+                    font.pixelSize: Theme.fontSizeMedium
+                    anchors.left: moviePoster.right
+                    anchors.top: movieGenreLabel.bottom
+                }
             }
-            Label {
-                x: Theme.paddingLarge
-                text: page.genre
-                color: Theme.secondaryHighlightColor
-                font.pixelSize: Theme.fontSizeMedium
-            }
-            Label {
-                x: Theme.paddingLarge
-                text: page.runtime
-                color: Theme.secondaryHighlightColor
-                font.pixelSize: Theme.fontSizeMedium
-            }
+
         }
     }
 }
