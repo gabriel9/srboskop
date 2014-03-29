@@ -19,5 +19,8 @@ OTHER_FILES += qml/Srboskop.qml \
     Srboskop.desktop \
     qml/pages/Cinema.qml \
     qml/pages/Movie.qml \
-    qml/js/Logic.js
+    qml/js/Logic.js \
+    qml/pages/ComingSoon.qml \
+    qml/pages/NowPlaying.qml \
+    qml/pages/About.qml
 
