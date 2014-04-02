@@ -6,7 +6,7 @@ SilicaListView {
     width: parent.itemWidth
     height: parent.height
     id: listView
-    model: nowPlayingModel
+    model: movieModel
     header: PageHeader {
         title: "Repertoar"
     }
@@ -19,6 +19,13 @@ SilicaListView {
             text: "Refresh"
             onClicked: Logic.refreshPlayingNow();
         }
+    }
+    BusyIndicator {
+        id: loadingIndicator
+        running: true
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.horizontalCenter: parent.horizontalCenter
+        size: BusyIndicatorSize.Large
     }
     delegate: BackgroundItem {
         height: 150
@@ -60,7 +67,7 @@ SilicaListView {
         }
         Label {
             id: terminsLabel
-            text: termini
+            text: termins
             anchors.top: genreLabel.bottom
             anchors.left: moviePoster.right
             anchors.right: parent.right
@@ -84,12 +91,20 @@ SilicaListView {
             font.pixelSize: Theme.fontSizeSmall
         }
 
-        onClicked: pageStack.push(Qt.resolvedUrl("Movie.qml"), {title: title, genre: genre, image: image, runtime: runtime})
+        onClicked: pageStack.push(Qt.resolvedUrl("Movie.qml"), {
+                                      title: title,
+                                      genre: genre,
+                                      image: image,
+                                      runtime: runtime,
+                                      trailer: trailer,
+                                      termins: termins,
+                                      imdbid: imdbid
+                                  })
     }
     VerticalScrollDecorator {}
 
     ListModel {
-        id: nowPlayingModel
+        id: movieModel
     }
 
     Component.onCompleted: Logic.refreshPlayingNow();
