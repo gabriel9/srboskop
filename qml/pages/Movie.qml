@@ -32,35 +32,42 @@ Page {
             PageHeader {
                 title: page.title
             }
-            Image {
-                id: moviePoster
-                source: image
-                fillMode: Image.PreserveAspectFit
+            Row {
                 x: Theme.paddingLarge
+                Image {
+                    id: moviePoster
+                    source: image
+                    fillMode: Image.PreserveAspectFit
+                }
+                Column {
+                    Label {
+                        id: movieGenreLabel
+                        x: Theme.paddingLarge
+                        text: page.genre
+                        color: Theme.secondaryColor
+                        font.pixelSize: Theme.fontSizeMedium
+                    }
+                    Label {
+                        id: movieRuntimeLabel
+                        x: Theme.paddingLarge
+                        text: page.runtime
+                        color: Theme.secondaryColor
+                        font.pixelSize: Theme.fontSizeMedium
+                    }
+                    Label {
+                        id: movieTerminsLabel
+                        x: Theme.paddingLarge
+                        text: page.termins
+                        color: Theme.secondaryColor
+                        font.pixelSize: Theme.fontSizeMedium
+                        wrapMode: Text.WordWrap
+                    }
+                }
             }
-            Label {
-                id: movieGenreLabel
-                x: Theme.paddingLarge
-                text: page.genre
-                color: Theme.secondaryColor
-                font.pixelSize: Theme.fontSizeMedium
-            }
-            Label {
-                id: movieRuntimeLabel
-                x: Theme.paddingLarge
-                text: page.runtime
-                color: Theme.secondaryColor
-                font.pixelSize: Theme.fontSizeMedium
 
-            }
-            Label {
-                id: movieTerminsLabel
-                x: Theme.paddingLarge
-                text: page.termins
-                color: Theme.secondaryColor
-                font.pixelSize: Theme.fontSizeMedium
 
-            }
+
+
             Button {
                 id: trailerButton
                 x: Theme.paddingLarge

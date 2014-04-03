@@ -30,7 +30,7 @@ SilicaListView {
     }
 
     delegate: BackgroundItem {
-        height: 150
+        height: 200
         id: delegate
         Image {
             id: moviePoster
@@ -50,7 +50,7 @@ SilicaListView {
             anchors.left: moviePoster.right
             anchors.leftMargin: 5
             anchors.right: parent.right
-            elide: Text.ElideRight
+            wrapMode: Text.WordWrap
             color: delegate.highlighted ? Theme.highlightColor : Theme.primaryColor
 
         }
