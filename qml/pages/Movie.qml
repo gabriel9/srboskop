@@ -34,7 +34,9 @@ Page {
                 title: page.title
             }
             Row {
-                x: Theme.paddingLarge
+                anchors.leftMargin: Theme.paddingLarge
+                anchors.left: parent.left
+                anchors.right: parent.right
                 Image {
                     id: moviePoster
                     source: image
@@ -46,21 +48,24 @@ Page {
                         x: Theme.paddingLarge
                         text: page.genre
                         color: Theme.secondaryColor
-                        font.pixelSize: Theme.fontSizeMedium
+                        font.pixelSize: Theme.fontSizeSmall
                     }
                     Label {
                         id: movieRuntimeLabel
                         x: Theme.paddingLarge
                         text: page.runtime
                         color: Theme.secondaryColor
-                        font.pixelSize: Theme.fontSizeMedium
+                        font.pixelSize: Theme.fontSizeSmall
                     }
                     Label {
+
                         id: movieTerminsLabel
-                        x: Theme.paddingLarge
+                        anchors.left: parent.left
+                        anchors.right: parent.right
+                        anchors.leftMargin: Theme.paddingLarge
                         text: page.termins
                         color: Theme.secondaryColor
-                        font.pixelSize: Theme.fontSizeMedium
+                        font.pixelSize: Theme.fontSizeSmall
                         wrapMode: Text.WordWrap
                     }
                 }
@@ -68,9 +73,10 @@ Page {
             Label {
                 id: movieDescription
                 text: page.content
-//                anchors.left: parent.left
-//                anchors.right: parent.right
-                x: Theme.paddingLarge
+                anchors.left: parent.left
+                anchors.right: parent.right
+                anchors.leftMargin: Theme.paddingLarge
+                anchors.rightMargin: Theme.paddingLarge
                 wrapMode: Text.WordWrap
                 font.pixelSize: Theme.fontSizeExtraSmall
                 color: Theme.secondaryColor
