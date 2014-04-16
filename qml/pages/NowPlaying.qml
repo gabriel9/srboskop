@@ -98,7 +98,8 @@ SilicaListView {
                                       runtime: runtime,
                                       trailer: trailer,
                                       termins: termins,
-                                      imdbid: imdbid
+                                      imdbid: imdbid,
+                                      content: content
                                   })
     }
     VerticalScrollDecorator {}

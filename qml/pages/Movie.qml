@@ -11,6 +11,7 @@ Page {
     property string trailer
     property string termins
     property string imdbid
+    property string content
     SilicaFlickable {
         anchors.fill: parent
 
@@ -64,7 +65,16 @@ Page {
                     }
                 }
             }
-
+            Label {
+                id: movieDescription
+                text: page.content
+//                anchors.left: parent.left
+//                anchors.right: parent.right
+                x: Theme.paddingLarge
+                wrapMode: Text.WordWrap
+                font.pixelSize: Theme.fontSizeExtraSmall
+                color: Theme.secondaryColor
+            }
 
 
 
