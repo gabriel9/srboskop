@@ -12,6 +12,7 @@ Page {
     property string termins
     property string imdbid
     property string content
+    property real rating
     SilicaFlickable {
         anchors.fill: parent
 
@@ -35,39 +36,64 @@ Page {
             }
             Row {
                 anchors.leftMargin: Theme.paddingLarge
+                anchors.rightMargin: Theme.paddingLarge
                 anchors.left: parent.left
                 anchors.right: parent.right
+                spacing: Theme.paddingLarge
                 Image {
                     id: moviePoster
                     source: image
                     fillMode: Image.PreserveAspectFit
                 }
                 Column {
+                    width: 250
                     Label {
                         id: movieGenreLabel
-                        x: Theme.paddingLarge
+                        anchors.right: parent.right
+                        anchors.left: parent.left
                         text: page.genre
                         color: Theme.secondaryColor
                         font.pixelSize: Theme.fontSizeSmall
                     }
                     Label {
                         id: movieRuntimeLabel
-                        x: Theme.paddingLarge
+                        anchors.left: parent.left
+                        anchors.right: parent.right
                         text: page.runtime
                         color: Theme.secondaryColor
                         font.pixelSize: Theme.fontSizeSmall
                     }
                     Label {
-
                         id: movieTerminsLabel
                         anchors.left: parent.left
                         anchors.right: parent.right
-                        anchors.leftMargin: Theme.paddingLarge
                         text: page.termins
                         color: Theme.secondaryColor
                         font.pixelSize: Theme.fontSizeSmall
                         wrapMode: Text.WordWrap
                     }
+                    Row {
+                        Repeater {
+                            model: 4
+                            GlassItem {}
+                        }
+
+                    }
+                    /*Button {
+                        id: trailerButton
+                        text: 'Trejler'
+                        onClicked: {
+                            console.log("open trailer " + page.trailer)
+                        }
+                    }
+                    Button {
+                        id: imdButton
+                        x: Theme.paddingLarge
+                        text: 'Imdb'
+                        onClicked: {
+                            console.log("open imdb " + page.imdbid)
+                        }
+                    }*/
                 }
             }
             Label {
@@ -84,22 +110,8 @@ Page {
 
 
 
-            Button {
-                id: trailerButton
-                x: Theme.paddingLarge
-                text: 'Trejler'
-                onClicked: {
-                    console.log("open trailer " + page.trailer)
-                }
-            }
-            Button {
-                id: imdButton
-                x: Theme.paddingLarge
-                text: 'Imdb'
-                onClicked: {
-                    console.log("open imdb " + page.imdbid)
-                }
-            }
+
+
 
         }
 
